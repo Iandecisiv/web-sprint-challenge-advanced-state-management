@@ -72,9 +72,9 @@ You are expected to be able to answer questions in these areas. Your responses c
 ### Task 2: Project Requirements
 Your finished project must include all of the following requirements:
 
-* [ ] Plan and implement how you are going to manage your state for your application
-* [ ] You _must_ use Redux as your state management system
-* [ ] Complete the tasks listed within:
+* [X] Plan and implement how you are going to manage your state for your application
+* [X] You _must_ use Redux as your state management system
+* [X] Complete the tasks listed within:
   * `./reducers/index.js`
   * `./actions/index.js`
   * `./index.js`
@@ -82,7 +82,7 @@ Your finished project must include all of the following requirements:
   * `./components/AddForm.js`
   * `./components/Smurf.js`
   * `./components/SmurfDisplay.js`
-* [ ] You completed application should do the following:
+* [X] You completed application should do the following:
   * Fetch and display data from the included server code on mounting.
   * Provide the user a form for adding in the Name, Position, Nickname and Description of a new Smurf.
   * Allow new smurfs to be added to the list when the submit smurf button is pressed.
@@ -110,8 +110,8 @@ For submission, please setup the webhook needed to push your submission to codeg
 
 ##### GET '/smurfs'
 
-* [ ] Retrieve an array all the Smurfs in the Smurf DB by writing a `GET` to the endpoint `/smurfs`.
-* [ ] Double check that your response from the server is an array of smurfs.
+* [X] Retrieve an array all the Smurfs in the Smurf DB by writing a `GET` to the endpoint `/smurfs`.
+* [X] Double check that your response from the server is an array of smurfs.
 
 ```js
 [
@@ -126,7 +126,7 @@ For submission, please setup the webhook needed to push your submission to codeg
 
 ##### POST '/smurfs'
 
-* [ ] Design the functionality to add a smurf to the Smurf DB you'll need all three fields. `name`, `age`, and `height`.
+* [X] Design the functionality to add a smurf to the Smurf DB you'll need all three fields. `name`, `age`, and `height`.
 
 Example of the shape of data to be sent to the `POST` endpoint:
 
@@ -138,7 +138,7 @@ Example of the shape of data to be sent to the `POST` endpoint:
 }
 ```
 
-* [ ] Double check to make sure that a smurf is created correctly once your functionality is built out.
+* [X] Double check to make sure that a smurf is created correctly once your functionality is built out.
 
 Initially Brainey will be in the array, but it takes more than one smurf to make the village. Be sure to add a few smurfs to populate our smurf village.
 
