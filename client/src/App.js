@@ -3,15 +3,16 @@ import React, { Component } from "react";
 import AddForm from './components/AddForm';
 import SmurfDisplay from './components/SmurfDisplay';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 import "./App.css";
 
 class App extends Component {
   render() {
+   
     return (
-      <div className="App">
-        <nav className="navbar navbar-dark bg-primary">
-          <a className="navbar-brand">Smurf Village Database</a>
+      <div className="App" style={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center'}}>
+        <nav>
+          <h2>Smurf Village</h2>
         </nav>
         <main>
           <AddForm/>
