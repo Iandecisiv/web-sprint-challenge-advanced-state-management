@@ -22,10 +22,29 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What problem does the context API help solve?
+
+  Context API is best used when some data needs to be accessible by many components at different nesting levels.  Its bad to use too much because you lose the flexibililty by making the components on the different levels dependant on a single store.
+	Normally you would have to pass components down the nest in order to be able to access information that is on the top level of an application/project.  But with ContextAPI you only have to access the store that is available on all levels of the nest.
+	From a technical standpoint context API is very efficient because it enables the use of Redux's implementation of the immutible state.  One of the main drivers behind Redux's design (and one of the many reasons to use it) is the fact that all of the functions that manipulate the state are NOT mutations, leading to a faster compile time and much easier debugging as there is a trace for each step whenever an action is called within redux.
+	Redux in itself is also a useful tool for the developers coding in Redux to think about the state of the project when they are coding in general.  Forcing developers to create and think about what data they want in their project as well as the actions that they wish to have/use to manipulate or change for the data is one of the essential parts of being able to have a healthy code base.
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+Actions, reducers, and the store are the three main parts that make up redux.  Coding languages in general are just storage of data, manipulation of data, and an interface of which to call that data.  The store stores our data, the reducer is the function that calls and manipulates the data within the store, and the actions are how the user (or rather in this case, the developer) chooses to execute the functions.  In the case of the actions needing to be more complicated, we can use libraries like redux-thunk.
+The store is known as the single source of truth because it stores the data for all levels (nested) of all the components.
+
 3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+The application state is the state for the entire application, where the component state is the state that renders when the individual component is rendered.  It makes more sense to use the component state when the variables that you need to store within the state are only used within that specific component.  The choice is based off of scope.  If the variable is used in multiple components and needs to be consistent, then it makes more sense to use the application state, so not to duplicate variables and make dependencies between components.
+This also avoids race conditions, as there may be delays between the updates between the variables being passed from component to component.
+
 4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux thunk is a middleware for react redux.  Normally actions are just plan old javascript objects, but this doesn't help us when we need to do actions that are more complicated than just data manipulation.  Thunk is one middleware type that allows us to include functions as a way to create objects and not just javascript objects.
+
 5. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+I love the standard react-redux state management system!  It is kind of hard to understand, but when you understand it, its really powerful and reminds me of some experimental languages due to the fact that it works like a state machine!
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
@@ -33,20 +52,20 @@ You are expected to be able to answer questions in these areas. Your responses c
 
 ### Task 1: Project Set Up
 
-* [ ] `fork & clone` this repository.
-* [ ] `cd` into the forked copy of this repository.
+* [X] `fork & clone` this repository.
+* [X] `cd` into the forked copy of this repository.
 
 #### Setup Server Code
-* [ ] `cd` into the server folder of this repository.
-* [ ] **RUN** `npm install` to retrieve all `server-side` the dependencies.
-* [ ] **RUN** `node server.js` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
-* [ ] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
+* [X] `cd` into the server folder of this repository.
+* [X] **RUN** `npm install` to retrieve all `server-side` the dependencies.
+* [X] **RUN** `node server.js` to get your API up and running on `http://localhost:3333`. This is the **URL** you're going to need to use within your React app in order to make AJAX requests for data.
+* [X] After your API is up and running, you can open chrome and type in `http://localhost:3333/smurfs`. You should see an array with one smurf in it returned to you. This is an array that your **API** will be using to store our Smurf Data.
 
 #### Setup Client Code
-* [ ] `cd ../client` into the client folder of this repository.
-* [ ] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
-* [ ] **RUN** `npm install` to retrieve all `client-side` the dependencies.
-* [ ] **RUN** `npm start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
+* [X] `cd ../client` into the client folder of this repository.
+* [X] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
+* [X] **RUN** `npm install` to retrieve all `client-side` the dependencies.
+* [X] **RUN** `npm start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
 
 **LOOK** at all the files you've been given for this project. One important file to note is `server.js`. This file contains an **API** that you are going to be interfacing with. Below is documentation on how to interact with the **API**.
 
